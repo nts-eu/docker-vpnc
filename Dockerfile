@@ -14,7 +14,7 @@ RUN apt-get update \
     && apt-get autoremove
     
 EXPOSE 22
-VOLUME /etc/vpnc/default.conf
+VOLUME /etc/vpnc
 WORKDIR /etc/vpnc
 
 CMD [ "vpnc" ]
