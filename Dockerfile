@@ -3,8 +3,7 @@ MAINTAINER Markus Rainer <markus.rainer@nts.eu>
 
 
 USER root
-RUN sed -i '/jessie-updates/d' /etc/apt/sources.list \
-    && apt-get update \
+RUN apt-get update \
     && apt-get install -y \
     openssh-server \
     vpnc \
