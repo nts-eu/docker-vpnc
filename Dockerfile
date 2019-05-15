@@ -6,7 +6,7 @@ USER root
 RUN sed -i '/jessie-updates/d' /etc/apt/sources.list \
     && apt-get update \
     && apt-get install -y \
-    openssh_server \
+    openssh-server \
     vpnc \
     net-tools \
     netcat \
