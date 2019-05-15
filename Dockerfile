@@ -17,4 +17,4 @@ EXPOSE 22
 VOLUME /etc/vpnc
 WORKDIR /etc/vpnc
 
-CMD [ "vpnc" ]
+ENTRYPOINT [ "vpnc","--no-detach" ]
