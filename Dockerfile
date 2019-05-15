@@ -16,6 +16,6 @@ RUN sed -i '/jessie-updates/d' /etc/apt/sources.list \
     
 EXPOSE 22
 VOLUME /etc/vpnc/default.conf
-WORKERDIR /etc/vpnc
+WORKDIR /etc/vpnc
 
 CMD [ "vpnc" ]
