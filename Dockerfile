@@ -1,7 +1,6 @@
 FROM ubuntu:latest
 MAINTAINER Markus Rainer <markus.rainer@nts.eu>
 
-
 USER root
 RUN apt-get update \
     && apt-get install -y \
@@ -10,6 +9,7 @@ RUN apt-get update \
     net-tools \
     netcat \
     dnsutils \
+    iputils-ping \
     && apt-get clean \
     && apt-get autoremove
     
