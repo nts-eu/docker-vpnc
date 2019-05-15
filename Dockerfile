@@ -4,6 +4,7 @@ MAINTAINER Markus Rainer <markus.rainer@nts.eu>
 COPY ./init.sh /opt/init.sh
 
 USER root
+RUN mkdir /root/.ssh 
 RUN apt-get update \
     && apt-get install -y \
     openssh-server \
@@ -12,11 +13,12 @@ RUN apt-get update \
     netcat \
     dnsutils \
     iputils-ping \
+    vim \
     && apt-get clean \
     && apt-get autoremove
     
 EXPOSE 22
-VOLUME /etc/vpnc
+VOLUME ["/etc/vpnc","/root/.ssh"]
 WORKDIR /etc/vpnc
 
 ENTRYPOINT [ "/opt/init.sh" ]
