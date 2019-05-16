@@ -5,6 +5,7 @@ COPY ./init.sh /opt/init.sh
 
 USER root
 RUN mkdir /root/.ssh 
+RUN chmod +x /opt/init.sh
 RUN apt-get update \
     && apt-get install -y \
     openssh-server \
@@ -16,7 +17,6 @@ RUN apt-get update \
     vim \
     && apt-get clean \
     && apt-get autoremove
-    && chmod +x /opt/init.sh
     
 EXPOSE 22
 VOLUME ["/etc/vpnc","/root/.ssh"]
