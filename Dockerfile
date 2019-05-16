@@ -16,9 +16,10 @@ RUN apt-get update \
     vim \
     && apt-get clean \
     && apt-get autoremove
+    && chmod +x /opt/init.sh
     
 EXPOSE 22
 VOLUME ["/etc/vpnc","/root/.ssh"]
 WORKDIR /etc/vpnc
 
-ENTRYPOINT [ "vpnc" ]
+ENTRYPOINT [ "/opt/init.sh" ]
