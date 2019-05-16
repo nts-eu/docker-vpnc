@@ -21,4 +21,4 @@ EXPOSE 22
 VOLUME ["/etc/vpnc","/root/.ssh"]
 WORKDIR /etc/vpnc
 
-ENTRYPOINT [ "/opt/init.sh" ]
+ENTRYPOINT [ "vpnc" ]
