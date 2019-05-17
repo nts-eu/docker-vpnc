@@ -26,7 +26,7 @@ ENV XAUTH_USER user
 ENV XAUTH_PW password
 
 EXPOSE 22
-VOLUME ["/etc/vpnc","/root/.ssh"]
+VOLUME ["/root/.ssh"]
 WORKDIR /etc/vpnc
 
 ENTRYPOINT [ "/opt/init.sh" ]
